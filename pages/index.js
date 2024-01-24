@@ -1,47 +1,43 @@
 import styles from '../styles/containers.module.css';
 
-import TeamPlaatje from '../public/plaatjes/team.svg';
-import AccessibilityPlaatje from '../public/plaatjes/accessibility.svg';
-import DevelopmentPlaatje from '../public/plaatjes/development.svg';
-import Lely from '../public/plaatjes/lely.svg';
-import { Navigatie } from '../components/navigatie';
-import { Footer } from '../components/footer';
-import { Projectkaart } from '../components/projectkaart';
-import { Verhaalkaart } from '../components/verhaalkaart';
-
 export default () => {
   return (
-    <>
-      <Navigatie />
+    <div className="background-container">
+      <div className="content-container">
+        <p>RUBEN WERDMULLER</p>
+        <div className="svg-container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+            <circle cx="50%" cy="50%" r="50%" fill="#032EFF" />
+          </svg>
+        </div>
+        <p>Creative team lead & developer</p>
+      </div>
 
-      <main className={styles.container}>
-        <h1>
-          Hi, ik ben Ruben. Vandaag geef ik een college bij De Haagse Hogeschool
-          🏫
-        </h1>
-        <section className={styles.cardContainer}>
-          {/* <Projectkaart
-            titel="Lely Nederland"
-            beschrijving="Development"
-            Plaatje={Lely}
-            paginaUrl="/projecten/lely"
-          />
-          <Projectkaart
-            titel="Lely Nederland"
-            beschrijving="Development"
-            Plaatje={Lely}
-            paginaUrl="/projecten/lely"
-          /> */}
-          <Verhaalkaart>
-            <h2>Accessibility first</h2>
-            <p>Meer over de accessibility</p>
-            <img src="https://i.postimg.cc/fy8nJ0TG/ar-in-ikea-veel.jpg" />
-            <figcaption>Foto van mobile devices die AR showcasen</figcaption>
-          </Verhaalkaart>
-        </section>
+      <style jsx>{`
+        .background-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to bottom, white 50%, #eee 50%);
+        }
 
-        <Footer />
-      </main>
-    </>
+        .content-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          color: black; /* Set the desired text color */
+        }
+
+        .svg-container {
+          height: 200px;
+          margin-top: 10vh; /* Adjust as needed */
+          margin-bottom: 10vh; /* Adjust as needed */
+        }
+      `}</style>
+    </div>
   );
 };
